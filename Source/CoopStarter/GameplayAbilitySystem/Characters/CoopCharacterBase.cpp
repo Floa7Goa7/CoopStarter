@@ -2,8 +2,8 @@
 
 
 #include "CoopCharacterBase.h"
-
 #include "Components/CapsuleComponent.h"
+#include "CoopStarter/GameplayAbilitySystem/AttributeSets/BasicAttributeSet.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
@@ -35,6 +35,9 @@ ACoopCharacterBase::ACoopCharacterBase()
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.f;
+	
+	//Add the basic attribute set
+	BasicAttributes = CreateDefaultSubobject<UBasicAttributeSet>(TEXT("BasicAttributeSet"));
 }
 
 // Called when the game starts or when spawned
